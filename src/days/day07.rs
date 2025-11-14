@@ -53,7 +53,7 @@ fn part3(input: &str) -> String {
 fn parse_input(input: &str) -> (Vec<&str>, HashMap<char, Vec<char>>) {
     let names = input.lines().nth(0).unwrap().split(',').collect();
 
-    let mut rules: HashMap <char, Vec<char>> = input.lines().skip(2).map(|line| {
+    let rules: HashMap <char, Vec<char>> = input.lines().skip(2).map(|line| {
         let (letter, results) = line.split_once(" > ").unwrap();
         (letter.chars().nth(0).unwrap(), results.replace(',',"").chars().collect())
     }).collect();

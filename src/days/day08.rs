@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::cmp::{max, min};
 
 pub fn get_solutions() -> [fn(&str) -> String; 3] {
     [part1, part2, part3]
@@ -19,7 +18,7 @@ fn part2(input: &str) -> String {
         *thread_counts.entry(thread).or_insert(0) += 1;
     }
     let mut knot_count = 0;
-    for (thread1,value) in thread_counts.iter() {
+    for (thread1,_) in thread_counts.iter() {
         knot_count += thread_counts.keys()
             .filter(|thread2| are_crossing(thread1, *thread2))
             .fold(0, |acc, thread2| {acc + thread_counts.get(thread2).unwrap()});
