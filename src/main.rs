@@ -4,7 +4,7 @@ mod days;
 
 
 fn main() {
-    run_day(9);
+    run_day(11);
     //run_all();
 }
 
@@ -37,6 +37,8 @@ fn get_day_solutions(day: u32) -> Option<[fn(&str) -> String; 3]> {
         7 => Some(days::day07::get_solutions()),
         8 => Some(days::day08::get_solutions()),
         9 => Some(days::day09::get_solutions()),
+        10 => Some(days::day10::get_solutions()),
+        11 => Some(days::day11::get_solutions()),
         _ => None,
 
     }
